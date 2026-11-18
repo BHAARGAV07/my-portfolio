@@ -16,9 +16,9 @@ function App() {
       <SiteHeader />
       <main id="main-content" className="site-shell">
         <Hero />
+        <About about={content.about} profile={content.profile} />
         <Projects projects={content.projects} />
         <ExperienceProof items={content.experience} />
-        <About about={content.about} profile={content.profile} />
         <Skills skills={content.skills} />
         <Contact profile={content.profile} links={content.links} />
       </main>

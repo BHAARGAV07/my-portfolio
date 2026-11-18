@@ -28,7 +28,7 @@ export function Hero() {
           )}
           {photoFailed && import.meta.env.DEV && (
             <div className="hero__photo-placeholder" role="img" aria-label="Photo placeholder">
-              PHOTO / ADD public/photo.jpg
+              PHOTO / ADD public/photo.jpeg
             </div>
           )}
         </div>

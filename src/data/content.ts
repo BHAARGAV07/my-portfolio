@@ -11,7 +11,7 @@ export const content: PortfolioContent = {
     availability: '',
     email: 'bhaargavkc@gmail.com',
     resumePath: '/resume.pdf',
-    photoPath: '/photo.jpg',
+    photoPath: '/photo.jpeg',
     photoAlt: 'Portrait of Bhaargav K C',
   },
   bootLines: [

@@ -1,9 +1,9 @@
 import { content } from '../data/content';
 
 const navigation = [
-  { index: '01', label: 'Projects', href: '#projects' },
-  { index: '02', label: 'Experience', href: '#experience' },
-  { index: '03', label: 'About', href: '#about' },
+  { index: '01', label: 'About', href: '#about' },
+  { index: '02', label: 'Projects', href: '#projects' },
+  { index: '03', label: 'Experience', href: '#experience' },
   { index: '04', label: 'Skills', href: '#skills' },
   { index: '05', label: 'Contact', href: '#contact' },
 ];
