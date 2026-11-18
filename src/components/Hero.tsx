@@ -12,25 +12,30 @@ export function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero__photo-wrap">
-        {!photoFailed && (
-          <img
-            className="hero__photo"
-            src={profile.photoPath}
-            width="360"
-            height="440"
-            alt={profile.photoAlt}
-            fetchPriority="high"
-            onError={() => setPhotoFailed(true)}
-          />
-        )}
-        {photoFailed && import.meta.env.DEV && (
-          <div className="hero__photo-placeholder" role="img" aria-label="Photo placeholder">
-            Photo placeholder — add public/photo.jpg
-          </div>
-        )}
+        <div className="hero__photo-frame hud-panel">
+          <span className="hero__frame-line hero__frame-line--tl" />
+          <span className="hero__frame-line hero__frame-line--br" />
+          {!photoFailed && (
+            <img
+              className="hero__photo"
+              src={profile.photoPath}
+              width="360"
+              height="440"
+              alt={profile.photoAlt}
+              fetchPriority="high"
+              onError={() => setPhotoFailed(true)}
+            />
+          )}
+          {photoFailed && import.meta.env.DEV && (
+            <div className="hero__photo-placeholder" role="img" aria-label="Photo placeholder">
+              PHOTO / ADD public/photo.jpg
+            </div>
+          )}
+        </div>
+        <p className="hero__photo-label hud-label">VISUAL ID / 001</p>
       </div>
       <div className="hero__content">
-        <p className="meta hero__eyebrow"><span className="prompt" aria-hidden="true">&gt;</span> portfolio / bhaargav-kc</p>
+        <p className="meta hero__eyebrow"><span className="prompt" aria-hidden="true">&gt;</span> 00 / PROFILE DETECTED</p>
         <h1 id="hero-title">{profile.name}<span className="cursor" aria-hidden="true">_</span></h1>
         <p className="hero__statement measure">
           {profile.heroStatement || missingValue('Write one specific sentence about what you build')}

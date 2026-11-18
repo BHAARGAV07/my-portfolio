@@ -1,11 +1,11 @@
 import { content } from '../data/content';
 
 const navigation = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { index: '01', label: 'Projects', href: '#projects' },
+  { index: '02', label: 'Experience', href: '#experience' },
+  { index: '03', label: 'About', href: '#about' },
+  { index: '04', label: 'Skills', href: '#skills' },
+  { index: '05', label: 'Contact', href: '#contact' },
 ];
 
 export function SiteHeader() {
@@ -19,11 +19,11 @@ export function SiteHeader() {
           <ul className="site-header__nav">
             {navigation.map((item) => (
               <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+                <a href={item.href}><span aria-hidden="true">{item.index} / </span>{item.label}</a>
               </li>
             ))}
             <li>
-              <a href={content.profile.resumePath}>Resume</a>
+              <a href={content.profile.resumePath}><span aria-hidden="true">PDF / </span>Resume</a>
             </li>
           </ul>
         </nav>

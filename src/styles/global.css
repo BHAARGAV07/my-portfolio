@@ -166,8 +166,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 5;
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  border-bottom: var(--hud-line);
+  background: rgb(5 9 10 / 92%);
 }
 
 .site-header__inner {
@@ -188,6 +188,9 @@ img {
 }
 
 .site-header__name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -201,6 +204,20 @@ img {
   padding: 0;
   list-style: none;
   font-size: var(--text-sm);
+}
+
+.site-header__nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.site-header__nav a span {
+  color: var(--color-border);
+}
+
+.site-header__nav a:hover,
+.site-header__nav a:focus-visible {
+  color: var(--color-accent);
 }
 
 .hero {
@@ -217,12 +234,20 @@ img {
   min-height: 20rem;
 }
 
+.hero__photo-frame {
+  position: relative;
+  width: min(100%, 22.5rem);
+  aspect-ratio: 4 / 5;
+  padding: var(--space-3);
+  border-color: var(--color-border);
+}
+
 .hero__photo,
 .hero__photo-placeholder {
   width: 100%;
-  max-width: 22.5rem;
-  aspect-ratio: 9 / 11;
+  height: 100%;
   border: 1px solid var(--color-border);
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -236,8 +261,26 @@ img {
   text-align: center;
 }
 
+.hero__frame-line {
+  position: absolute;
+  z-index: 1;
+  width: 2rem;
+  height: 2rem;
+  border-color: var(--color-accent);
+  filter: var(--hud-glow);
+}
+
+.hero__frame-line--tl { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+.hero__frame-line--br { right: -1px; bottom: -1px; border-right: 1px solid; border-bottom: 1px solid; }
+
+.hero__photo-label {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+}
+
 .hero__content {
   grid-column: 6 / -1;
+  container-type: inline-size;
 }
 
 .hero__eyebrow {
@@ -246,7 +289,10 @@ img {
 }
 
 .hero h1 {
+  max-width: 100%;
   margin-bottom: var(--space-8);
+  font-size: clamp(1.75rem, 10cqi, 7rem);
+  white-space: nowrap;
 }
 
 .hero__statement {
@@ -864,6 +910,14 @@ img {
   .hero__photo,
   .hero__photo-placeholder {
     max-width: 15rem;
+  }
+
+  .hero__photo-frame {
+    width: min(100%, 15rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 10cqi, 3.8rem);
   }
 
   .section-heading,
