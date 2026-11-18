@@ -1,19 +1,18 @@
 import { content } from './data/content';
+import { BootIntro } from './components/BootIntro';
+import { Hero } from './components/Hero';
+import { SiteHeader } from './components/SiteHeader';
 import './styles/global.css';
 
 function App() {
   return (
-    <div className="site-shell">
-      <header>
-        <p>{content.profile.name}</p>
-      </header>
-      <main id="main-content">
-        <section className="site-section" aria-labelledby="scaffold-title">
-          <h1 id="scaffold-title">Portfolio scaffold</h1>
-          <p className="measure">Section content will be built in Phase 3.</p>
-        </section>
+    <>
+      <BootIntro lines={content.bootLines} />
+      <SiteHeader />
+      <main id="main-content" className="site-shell">
+        <Hero />
       </main>
-    </div>
+    </>
   );
 }
 

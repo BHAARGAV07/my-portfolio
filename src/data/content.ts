@@ -11,7 +11,14 @@ export const content: PortfolioContent = {
     availability: '',
     email: 'bhaargavkc@gmail.com',
     resumePath: '/resume.pdf',
+    photoPath: '/photo.jpg',
+    photoAlt: 'Portrait of Bhaargav K C',
   },
+  bootLines: [
+    { command: '$ whoami', output: 'Bhaargav K C' },
+    { command: '$ cat role.txt', output: 'B.Tech CSBS student · RMK Engineering College, Chennai' },
+    { command: '$ ls ./projects', output: '' },
+  ],
   links: [
     { label: 'GitHub', href: 'https://github.com/BHAARGAV07' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/bhaargav-kc-82456b28b' },

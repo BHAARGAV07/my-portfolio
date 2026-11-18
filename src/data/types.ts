@@ -8,6 +8,13 @@ export interface Profile {
   availability: string;
   email: string;
   resumePath: string;
+  photoPath: string;
+  photoAlt: string;
+}
+
+export interface BootLine {
+  command: string;
+  output: string;
 }
 
 export interface ExternalLink {
@@ -54,6 +61,7 @@ export interface SkillGroups {
 
 export interface PortfolioContent {
   profile: Profile;
+  bootLines: BootLine[];
   links: ExternalLink[];
   projects: Project[];
   experience: ExperienceItem[];
