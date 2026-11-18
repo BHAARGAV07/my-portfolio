@@ -43,7 +43,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
                   <ul>
                     {project.decisions.map((decision) => (
                       <li key={decision.decision}>
-                        <strong>{decision.decision}.</strong> {decision.reason}
+                        <strong>{decision.decision}.</strong>{decision.reason && ` ${decision.reason}`}
                       </li>
                     ))}
                   </ul>

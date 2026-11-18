@@ -417,6 +417,107 @@ img {
   object-fit: cover;
 }
 
+.timeline {
+  border-top: 1px solid var(--color-border);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: var(--space-8);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.timeline__date {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.timeline__item h3 {
+  margin-bottom: var(--space-2);
+}
+
+.timeline__organization {
+  margin: 0 0 var(--space-3);
+  color: var(--color-accent);
+  font-family: var(--font-meta);
+  font-size: var(--text-sm);
+}
+
+.timeline__item .measure {
+  margin-block: 0;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-12);
+}
+
+.about__copy p {
+  margin-block: 0 var(--space-6);
+}
+
+.about__education {
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-6);
+}
+
+.about__education p {
+  margin-block: 0 var(--space-2);
+}
+
+.about__education .meta {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.skills__list {
+  border-top: 1px solid var(--color-border);
+}
+
+.skills__group {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: var(--space-8);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills__group h3,
+.skills__group p {
+  margin: 0;
+}
+
+.skills__group h3 {
+  color: var(--color-accent);
+  font-size: var(--text-base);
+}
+
+.contact__content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.contact__email {
+  font-family: var(--font-meta);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.site-footer {
+  padding-block: var(--space-8);
+  color: var(--color-muted);
+}
+
 .project-entry__screenshot-placeholder {
   display: grid;
   place-items: center;
@@ -473,7 +574,11 @@ img {
   }
 
   .section-heading,
-  .project-entry {
+  .project-entry,
+  .timeline__item,
+  .about__content,
+  .skills__group,
+  .contact__content {
     grid-template-columns: 1fr;
   }
 
@@ -484,5 +589,17 @@ img {
   .project-entry__media {
     grid-row: 2;
     max-width: 32rem;
+  }
+
+  .about__education {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+    padding-top: var(--space-6);
+    padding-left: 0;
+  }
+
+  .contact__content {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
