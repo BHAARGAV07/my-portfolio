@@ -12,7 +12,7 @@ export const content: PortfolioContent = {
     email: 'bhaargavkc@gmail.com',
     phone: '+91 7530066784',
     resumePath: '/resume.pdf',
-    photoPath: '/photo.jpeg',
+    photoPath: '/Photo.png',
     photoAlt: 'Portrait of Bhaargav K C',
   },
   bootLines: [
