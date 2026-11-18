@@ -2,12 +2,29 @@ import { useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { content } from '../data/content';
 import { useReveal } from '../hooks/useReveal';
+import { TypingText } from './MotionText';
 
-const commands = ['help', 'about', 'projects', 'skills', 'experience', 'contact', 'resume', 'clear'];
+const commands = ['help', 'whoami', 'about', 'project', 'projects', 'skills', 'experience', 'contact', 'resume', 'clear'];
+
+interface TerminalLine {
+  text: string;
+  typed?: boolean;
+}
+
+function TypingLine({ text }: { text: string }) {
+  return <TypingText text={text} />;
+}
 
 function outputFor(command: string): string[] {
   switch (command) {
+    case 'whoami': return [
+      content.profile.name,
+      `${content.profile.education} · ${content.profile.location} · Class of ${content.profile.graduationYear}`,
+      `Email: ${content.profile.email}`,
+      `Phone: ${content.profile.phone}`,
+    ];
     case 'about': return [content.profile.title, content.profile.location, ...content.about.paragraphs];
+    case 'project':
     case 'projects': return content.projects.map((project) => project.name);
     case 'skills': return [
       `Languages: ${content.skills.languages.join(', ')}`,
@@ -25,7 +42,7 @@ function outputFor(command: string): string[] {
 
 export function TerminalPanel() {
   const sectionRef = useReveal<HTMLElement>();
-  const [history, setHistory] = useState<string[]>(['Type help to list available commands.']);
+  const [history, setHistory] = useState<TerminalLine[]>([{ text: 'Type help to list available commands.' }]);
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -36,7 +53,12 @@ export function TerminalPanel() {
     if (command === 'clear') {
       setHistory([]);
     } else {
-      setHistory((current) => [...current, `$ ${command}`, ...outputFor(command)]);
+      const shouldType = command === 'project' || command === 'projects';
+      setHistory((current) => [
+        ...current,
+        { text: `$ ${command}` },
+        ...outputFor(command).map((text) => ({ text, typed: shouldType })),
+      ]);
     }
     setValue('');
   };
@@ -49,7 +71,7 @@ export function TerminalPanel() {
       </div>
       <div className="terminal-panel__window" onClick={() => inputRef.current?.focus()}>
         <div className="terminal-panel__output" aria-live="polite">
-          {history.map((line, index) => <p key={`${line}-${index}`}>{line}</p>)}
+          {history.map((line, index) => <p key={`${line.text}-${index}`}>{line.typed ? <TypingLine text={line.text} /> : line.text}</p>)}
         </div>
         <form className="terminal-panel__form" onSubmit={submit}>
           <label htmlFor="terminal-command"><span aria-hidden="true">$</span><span className="sr-only">Terminal command</span></label>

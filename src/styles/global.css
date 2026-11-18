@@ -855,6 +855,8 @@ img {
   clip-path: polygon(0.6rem 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%, 0 0.6rem);
 }
 
+.project-entry--no-media .project-entry__main { grid-column: 2 / -1; }
+
 .project-entry__media img,
 .project-entry__screenshot-placeholder {
   width: 100%;
@@ -986,6 +988,39 @@ img {
   flex-wrap: wrap;
   gap: var(--space-4);
 }
+
+.contact__form {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 42rem;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.contact__form label {
+  color: var(--color-muted);
+  font-family: var(--font-meta);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  padding: var(--space-3);
+}
+
+.contact__form textarea { resize: vertical; }
+.contact__form .button { justify-self: start; }
+.contact__form-note { margin: 0; color: var(--color-muted); font-size: var(--text-sm); }
 
 .site-footer {
   padding-block: var(--space-8);
@@ -1196,6 +1231,8 @@ img {
   .project-entry {
     gap: var(--space-4);
   }
+
+  .project-entry--no-media .project-entry__main { grid-column: 1; }
 
   .project-entry__media {
     grid-row: 2;

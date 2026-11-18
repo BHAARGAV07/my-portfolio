@@ -10,6 +10,7 @@ export const content: PortfolioContent = {
     heroStatement: 'I build frontend and full-stack software with React, Java, FastAPI, and Supabase.',
     availability: 'Interested in frontend and full-stack software engineering opportunities.',
     email: 'bhaargavkc@gmail.com',
+    phone: '+91 7530066784',
     resumePath: '/resume.pdf',
     photoPath: '/photo.jpeg',
     photoAlt: 'Portrait of Bhaargav K C',

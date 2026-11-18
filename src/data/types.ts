@@ -7,6 +7,7 @@ export interface Profile {
   heroStatement: string;
   availability: string;
   email: string;
+  phone: string;
   resumePath: string;
   photoPath: string;
   photoAlt: string;

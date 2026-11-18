@@ -18,7 +18,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="project-entry">
+    <article className={`project-entry${project.screenshotPath ? '' : ' project-entry--no-media'}`}>
       <div className="project-entry__index meta">{String(index + 1).padStart(2, '0')}</div>
       <div className="project-entry__main">
         {project.name && <ScrambleHeading as="h3">{project.name}</ScrambleHeading>}
@@ -63,8 +63,8 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           </details>
         )}
       </div>
-      <div className="project-entry__media">
-        {project.screenshotPath ? (
+      {project.screenshotPath && (
+        <div className="project-entry__media">
           <img
             src={project.screenshotPath}
             width="640"
@@ -72,12 +72,8 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
             loading="lazy"
             alt={project.screenshotAlt}
           />
-        ) : import.meta.env.DEV ? (
-          <div className="project-entry__screenshot-placeholder" role="img" aria-label="Screenshot placeholder">
-            Screenshot placeholder
-          </div>
-        ) : null}
-      </div>
+        </div>
+      )}
     </article>
   );
 }
