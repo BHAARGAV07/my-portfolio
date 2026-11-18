@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import type { Project } from '../data/types';
 import { useReveal } from '../hooks/useReveal';
+import { ScrambleHeading, TypingText } from './MotionText';
 
 interface ProjectsProps {
   projects: Project[];
@@ -13,12 +15,13 @@ function missingProjects() {
 
 function ProjectEntry({ project, index }: { project: Project; index: number }) {
   const hasDetails = Boolean(project.problem || project.decisions.length || project.outcome);
+  const [open, setOpen] = useState(false);
 
   return (
     <article className="project-entry">
       <div className="project-entry__index meta">{String(index + 1).padStart(2, '0')}</div>
       <div className="project-entry__main">
-        {project.name && <h3>{project.name}</h3>}
+        {project.name && <ScrambleHeading as="h3">{project.name}</ScrambleHeading>}
         {project.summary && <p className="project-entry__summary">{project.summary}</p>}
         <div className="project-entry__meta meta">
           {project.role && <span>Role: {project.role}</span>}
@@ -30,21 +33,21 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
         </div>
         {hasDetails && (
           <details className="project-entry__details">
-            <summary>Problem / Decisions / Outcome</summary>
+            <summary onClick={() => setOpen((current) => !current)}>Problem / Decisions / Outcome</summary>
             <div className="project-entry__details-content">
               {project.problem && (
                 <div>
-                  <h4>Problem</h4>
-                  <p>{project.problem}</p>
+                  <ScrambleHeading as="h4">Problem</ScrambleHeading>
+                  <p><TypingText text={project.problem} active={open} /></p>
                 </div>
               )}
               {project.decisions.length > 0 && (
                 <div>
-                  <h4>Decisions</h4>
+                  <ScrambleHeading as="h4">Decisions</ScrambleHeading>
                   <ul>
                     {project.decisions.map((decision) => (
                       <li key={decision.decision}>
-                        <strong>{decision.decision}.</strong>{decision.reason && ` ${decision.reason}`}
+                        <strong>{decision.decision}.</strong>{decision.reason && <> <TypingText text={decision.reason} active={open} /></>}
                       </li>
                     ))}
                   </ul>
@@ -52,8 +55,8 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
               )}
               {project.outcome && (
                 <div>
-                  <h4>Outcome</h4>
-                  <p>{project.outcome}</p>
+                  <ScrambleHeading as="h4">Outcome</ScrambleHeading>
+                  <p><TypingText text={project.outcome} active={open} /></p>
                 </div>
               )}
             </div>
@@ -86,7 +89,7 @@ export function Projects({ projects }: ProjectsProps) {
     <section ref={sectionRef} className="site-section projects" id="projects" aria-labelledby="projects-title">
       <div className="section-heading">
         <p className="meta section-heading__path"><span className="prompt" aria-hidden="true">&gt;</span> ~/projects</p>
-        <h2 id="projects-title">Selected projects</h2>
+        <ScrambleHeading as="h2" id="projects-title">Selected projects</ScrambleHeading>
       </div>
       {projects.length > 0 ? projects.map((project, index) => (
         <ProjectEntry key={`${project.name}-${index}`} project={project} index={index} />

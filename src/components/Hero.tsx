@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { content } from '../data/content';
+import { TypingText } from './MotionText';
 
 function missingValue(label: string) {
   return import.meta.env.DEV ? `[${label} — DRAFT - REWRITE IN OWN VOICE]` : '';
@@ -36,9 +37,11 @@ export function Hero() {
       </div>
       <div className="hero__content">
         <p className="meta hero__eyebrow"><span className="prompt" aria-hidden="true">&gt;</span> 00 / PROFILE DETECTED</p>
-        <h1 id="hero-title">{profile.name}<span className="cursor" aria-hidden="true">_</span></h1>
+        <h1 className="hero__name" id="hero-title" data-text={profile.name}>
+          <span>{profile.name}</span><span className="cursor" aria-hidden="true">_</span>
+        </h1>
         <p className="hero__statement measure">
-          {profile.heroStatement || missingValue('Write one specific sentence about what you build')}
+          {profile.heroStatement ? <TypingText text={profile.heroStatement} /> : missingValue('Write one specific sentence about what you build')}
         </p>
         <p className="hero__availability">
           {profile.availability || missingValue('Add role and availability')}

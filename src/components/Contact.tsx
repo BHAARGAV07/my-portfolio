@@ -1,5 +1,6 @@
 import type { ExternalLink, Profile } from '../data/types';
 import { useReveal } from '../hooks/useReveal';
+import { ScrambleHeading } from './MotionText';
 
 export function Contact({ profile, links }: { profile: Profile; links: ExternalLink[] }) {
   const sectionRef = useReveal<HTMLElement>();
@@ -8,7 +9,7 @@ export function Contact({ profile, links }: { profile: Profile; links: ExternalL
     <section ref={sectionRef} className="site-section contact" id="contact" aria-labelledby="contact-title">
       <div className="section-heading">
         <p className="meta section-heading__path"><span className="prompt" aria-hidden="true">&gt;</span> ~/contact</p>
-        <h2 id="contact-title">Contact</h2>
+        <ScrambleHeading as="h2" id="contact-title">Contact</ScrambleHeading>
       </div>
       <div className="contact__content">
         <a className="contact__email" href={`mailto:${profile.email}`}>{profile.email}</a>

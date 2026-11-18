@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { BootLine, Profile } from '../data/types';
 import { useBootIntro } from '../hooks/useBootIntro';
+import { DecodeText } from './MotionText';
 
 interface BootIntroProps {
   lines: BootLine[];
@@ -24,6 +25,9 @@ export function BootIntro({ lines, profile }: BootIntroProps) {
   return (
     <div className="opening-sequence" aria-hidden="true">
       <div className="opening-sequence__stage">
+        <svg className="opening-sequence__frame-svg" viewBox="0 0 1000 600" aria-hidden="true">
+          <path d="M34 94V34H94M906 34h60v60M34 506v60h60M966 506v60h-60" />
+        </svg>
         <span className="opening-sequence__bracket opening-sequence__bracket--tl" />
         <span className="opening-sequence__bracket opening-sequence__bracket--tr" />
         <span className="opening-sequence__bracket opening-sequence__bracket--bl" />
@@ -82,19 +86,20 @@ export function BootIntro({ lines, profile }: BootIntroProps) {
             ) : import.meta.env.DEV ? (
               <span>PHOTO<br />PENDING</span>
             ) : null}
+            <span className="opening-sequence__photo-scanline" />
           </div>
-          <p className="opening-sequence__scan-text">SCANNING<span className="opening-sequence__ellipsis">...</span></p>
+          <p className="opening-sequence__scan-text"><DecodeText text="SCANNING..." /></p>
         </div>
 
         <div className="opening-sequence__identity">
-          <p className="opening-sequence__identity-name">{profile.name}</p>
+          <p className="opening-sequence__identity-name"><DecodeText text={profile.name} /></p>
           <p className="opening-sequence__identity-line">{profile.title}</p>
           <p className="opening-sequence__identity-line">{profile.education} / {profile.location}</p>
         </div>
 
         <div className="opening-sequence__commands">
           {lines.map((line) => (
-            <p key={line.command}><span>{line.command}</span>{line.output}</p>
+            <p key={line.command}><span>[ OK ]</span> {line.command.replace('$ ', '')} <b>{line.output}</b></p>
           ))}
         </div>
 

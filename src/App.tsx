@@ -1,5 +1,6 @@
 import { content } from './data/content';
 import { About } from './components/About';
+import { Atmosphere } from './components/Atmosphere';
 import { BootIntro } from './components/BootIntro';
 import { Contact } from './components/Contact';
 import { ExperienceProof } from './components/ExperienceProof';
@@ -7,17 +8,20 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { SiteHeader } from './components/SiteHeader';
+import { TerminalPanel } from './components/TerminalPanel';
 import './styles/global.css';
 
 function App() {
   return (
     <>
+      <Atmosphere />
       <BootIntro lines={content.bootLines} profile={content.profile} />
       <SiteHeader />
       <main id="main-content" className="site-shell">
         <Hero />
-        <About about={content.about} profile={content.profile} />
         <Projects projects={content.projects} />
+        <TerminalPanel />
+        <About about={content.about} profile={content.profile} />
         <ExperienceProof items={content.experience} />
         <Skills skills={content.skills} />
         <Contact profile={content.profile} links={content.links} />

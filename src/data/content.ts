@@ -17,7 +17,7 @@ export const content: PortfolioContent = {
   bootLines: [
     { command: '$ whoami', output: 'Bhaargav K C' },
     { command: '$ cat role.txt', output: 'B.Tech CSBS student · RMK Engineering College, Chennai' },
-    { command: '$ ls ./projects', output: '' },
+    { command: '$ ls ./projects', output: 'Block-Safe · Chakro AI · CollabNotes · Ocular Allergy Management App' },
   ],
   links: [
     { label: 'GitHub', href: 'https://github.com/BHAARGAV07' },
@@ -108,8 +108,8 @@ export const content: PortfolioContent = {
     {
       title: 'IEEE research paper — LOVRS',
       organization: 'ICAIMS 2026',
-      date: 'Conditionally accepted',
-      description: 'Research paper on a fog-aware vehicle speed advisory system; oral presentation conditionally accepted.',
+      date: '',
+      description: 'Conditionally accepted for oral presentation: research paper on a fog-aware vehicle speed advisory system.',
     },
     {
       title: 'Second place — Yet Another Hackathon 2026',
@@ -139,7 +139,7 @@ export const content: PortfolioContent = {
   skills: {
     languages: ['Java', 'JavaScript (ES6+)', 'TypeScript', 'Python'],
     frontend: ['React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Responsive design', 'Component-based UI'],
-    backendAndData: ['FastAPI', 'Spring Boot (Java)', 'REST APIs', 'Supabase', 'MySQL', 'Supabase (PostgreSQL)', 'Groq LLMs'],
+    backendAndData: ['FastAPI', 'Spring Boot (Java)', 'REST APIs', 'Supabase (PostgreSQL)', 'MySQL', 'Groq LLMs'],
     tools: ['Git', 'GitHub', 'VS Code'],
   },
 };
