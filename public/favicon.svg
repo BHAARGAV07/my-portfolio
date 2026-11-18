@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#05090a"/>
+  <path d="M12 12h14M12 12v14M52 12H38M52 12v14M12 52h14M12 52V38M52 52H38M52 52V38" fill="none" stroke="#3ee6c4" stroke-width="2"/>
+  <text x="32" y="37" fill="#cfe8e4" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">BK</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#05090a"/>
+  <g stroke="#14383a" stroke-width="1" opacity=".75">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M90 0v630M180 0v630M270 0v630M360 0v630M450 0v630M540 0v630M630 0v630M720 0v630M810 0v630M900 0v630M990 0v630M1080 0v630"/>
+  </g>
+  <circle cx="260" cy="315" r="150" fill="none" stroke="#3ee6c4" stroke-width="2" opacity=".8"/>
+  <circle cx="260" cy="315" r="105" fill="none" stroke="#3ee6c4" stroke-width="1" opacity=".45"/>
+  <path d="M260 315 260 165A150 150 0 0 1 312 174Z" fill="#3ee6c4" opacity=".2"/>
+  <path d="M42 42h56M42 42v56M1158 42h-56M1158 42v56M42 588h56M42 588v-56M1158 588h-56M1158 588v-56" stroke="#3ee6c4" fill="none"/>
+  <text x="500" y="290" fill="#cfe8e4" font-family="Arial, sans-serif" font-size="48" font-weight="700">BHAARGAV K C</text>
+  <text x="504" y="345" fill="#3ee6c4" font-family="monospace" font-size="22">WEB DEVELOPER / FULL-STACK DEVELOPER</text>
+  <text x="504" y="388" fill="#6f8f8b" font-family="monospace" font-size="18">RMK ENGINEERING COLLEGE / CHENNAI</text>
+</svg>

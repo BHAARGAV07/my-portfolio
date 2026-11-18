@@ -362,50 +362,8 @@ img {
   color: var(--color-accent);
 }
 
-.boot-intro {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  display: grid;
-  place-items: center;
-  background: var(--color-bg);
-  animation: boot-fade-out 300ms ease 2.7s forwards;
-  pointer-events: none;
-}
-
-.boot-intro__content {
-  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
-  font-family: var(--font-meta);
-}
-
-.boot-intro__line {
-  margin: 0 0 var(--space-3);
-}
-
-.boot-intro__line span {
-  display: inline-block;
-  min-width: 10rem;
-  margin-right: var(--space-3);
-  color: var(--color-accent);
-}
-
-.boot-intro__skip {
-  margin-top: var(--space-6);
-  padding: var(--space-2) 0;
-  border: 0;
-  background: transparent;
-  color: var(--color-muted);
-  font: inherit;
-  text-decoration: underline;
-  pointer-events: auto;
-}
-
 @keyframes cursor-blink {
   50% { opacity: 0; }
-}
-
-@keyframes boot-fade-out {
-  to { opacity: 0; visibility: hidden; }
 }
 
 .site-section {
