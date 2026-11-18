@@ -12,7 +12,7 @@ import './styles/global.css';
 function App() {
   return (
     <>
-      <BootIntro lines={content.bootLines} />
+      <BootIntro lines={content.bootLines} profile={content.profile} />
       <SiteHeader />
       <main id="main-content" className="site-shell">
         <Hero />

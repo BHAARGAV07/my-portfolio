@@ -14,7 +14,7 @@ export function useBootIntro() {
     window.sessionStorage.setItem(SESSION_KEY, 'true');
     setIsVisible(true);
 
-    const timeout = window.setTimeout(() => setIsVisible(false), 3000);
+    const timeout = window.setTimeout(() => setIsVisible(false), 4800);
     return () => window.clearTimeout(timeout);
   }, []);
 
