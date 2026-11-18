@@ -1,6 +1,7 @@
 import { content } from './data/content';
 import { BootIntro } from './components/BootIntro';
 import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
 import { SiteHeader } from './components/SiteHeader';
 import './styles/global.css';
 
@@ -11,6 +12,7 @@ function App() {
       <SiteHeader />
       <main id="main-content" className="site-shell">
         <Hero />
+        <Projects projects={content.projects} />
       </main>
     </>
   );
