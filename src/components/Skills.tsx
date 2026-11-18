@@ -1,4 +1,5 @@
 import type { SkillGroups } from '../data/types';
+import { useReveal } from '../hooks/useReveal';
 
 const groups: Array<[keyof SkillGroups, string]> = [
   ['languages', 'Languages'],
@@ -8,8 +9,10 @@ const groups: Array<[keyof SkillGroups, string]> = [
 ];
 
 export function Skills({ skills }: { skills: SkillGroups }) {
+  const sectionRef = useReveal<HTMLElement>();
+
   return (
-    <section className="site-section skills" id="skills" aria-labelledby="skills-title">
+    <section ref={sectionRef} className="site-section skills" id="skills" aria-labelledby="skills-title">
       <div className="section-heading">
         <p className="meta section-heading__path"><span className="prompt" aria-hidden="true">&gt;</span> ~/skills</p>
         <h2 id="skills-title">Skills</h2>

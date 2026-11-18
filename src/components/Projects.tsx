@@ -1,4 +1,5 @@
 import type { Project } from '../data/types';
+import { useReveal } from '../hooks/useReveal';
 
 interface ProjectsProps {
   projects: Project[];
@@ -79,8 +80,10 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
 }
 
 export function Projects({ projects }: ProjectsProps) {
+  const sectionRef = useReveal<HTMLElement>();
+
   return (
-    <section className="site-section projects" id="projects" aria-labelledby="projects-title">
+    <section ref={sectionRef} className="site-section projects" id="projects" aria-labelledby="projects-title">
       <div className="section-heading">
         <p className="meta section-heading__path"><span className="prompt" aria-hidden="true">&gt;</span> ~/projects</p>
         <h2 id="projects-title">Selected projects</h2>

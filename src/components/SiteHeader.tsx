@@ -1,4 +1,5 @@
 import { content } from '../data/content';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 const navigation = [
   { index: '01', label: 'About', href: '#about' },
@@ -7,8 +8,11 @@ const navigation = [
   { index: '04', label: 'Skills', href: '#skills' },
   { index: '05', label: 'Contact', href: '#contact' },
 ];
+const sectionIds = navigation.map((item) => item.href.slice(1));
 
 export function SiteHeader() {
+  const activeSection = useActiveSection(sectionIds);
+
   return (
     <header className="site-header">
       <div className="site-header__inner">
@@ -19,7 +23,13 @@ export function SiteHeader() {
           <ul className="site-header__nav">
             {navigation.map((item) => (
               <li key={item.href}>
-                <a href={item.href}><span aria-hidden="true">{item.index} / </span>{item.label}</a>
+                <a
+                  className={activeSection === item.href.slice(1) ? 'is-active' : undefined}
+                  href={item.href}
+                  aria-current={activeSection === item.href.slice(1) ? 'page' : undefined}
+                >
+                  <span aria-hidden="true">{item.index} / </span>{item.label}
+                </a>
               </li>
             ))}
             <li>

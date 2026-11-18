@@ -1,8 +1,11 @@
 import type { AboutContent, Profile } from '../data/types';
+import { useReveal } from '../hooks/useReveal';
 
 export function About({ about, profile }: { about: AboutContent; profile: Profile }) {
+  const sectionRef = useReveal<HTMLElement>();
+
   return (
-    <section className="site-section about" id="about" aria-labelledby="about-title">
+    <section ref={sectionRef} className="site-section about" id="about" aria-labelledby="about-title">
       <div className="section-heading">
         <p className="meta section-heading__path"><span className="prompt" aria-hidden="true">&gt;</span> ~/about</p>
         <h2 id="about-title">About</h2>
