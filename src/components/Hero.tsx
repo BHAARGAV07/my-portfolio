@@ -23,7 +23,7 @@ export function Hero() {
               width="360"
               height="440"
               alt={profile.photoAlt}
-              fetchPriority="high"
+              ref={(image) => image?.setAttribute('fetchpriority', 'high')}
               onError={() => setPhotoFailed(true)}
             />
           )}
