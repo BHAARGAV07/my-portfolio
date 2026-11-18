@@ -472,9 +472,9 @@ img {
   scroll-margin-top: var(--section-scroll-margin);
   padding-block: var(--space-24);
   border-top: 1px solid var(--color-border);
-  opacity: 0;
-  transform: translateY(14px);
-  clip-path: inset(0 0 100% 0);
+  opacity: 1;
+  transform: none;
+  clip-path: none;
   transition: opacity 350ms ease, transform 350ms ease, clip-path 550ms cubic-bezier(.2,.75,.2,1);
 }
 
