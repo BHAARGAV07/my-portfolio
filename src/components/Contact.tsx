@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import type { ExternalLink, Profile } from '../data/types';
 import { useReveal } from '../hooks/useReveal';
 import { ScrambleHeading } from './MotionText';
+import { SocialIcon } from './SocialIcon';
 
 export function Contact({ profile, links }: { profile: Profile; links: ExternalLink[] }) {
   const sectionRef = useReveal<HTMLElement>();
@@ -24,9 +25,9 @@ export function Contact({ profile, links }: { profile: Profile; links: ExternalL
       </div>
       <div className="contact__content">
         <a className="contact__email" href={`mailto:${profile.email}`}>{profile.email}</a>
-        <div className="contact__links meta">
-          {links.filter((link) => link.label !== 'Email').map((link) => (
-            <a key={link.label} href={link.href}>{link.label}</a>
+        <div className="contact__links" aria-label="Contact links">
+          {links.map((link) => (
+            <SocialIcon key={link.label} link={link} />
           ))}
         </div>
         <form className="contact__form" onSubmit={submit}>

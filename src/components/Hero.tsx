@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { content } from '../data/content';
 import { TypingText } from './MotionText';
+import { SocialIcon } from './SocialIcon';
 
 function missingValue(label: string) {
   return import.meta.env.DEV ? `[${label} — DRAFT - REWRITE IN OWN VOICE]` : '';
@@ -52,7 +53,7 @@ export function Hero() {
         </div>
         <div className="hero__links" aria-label="Profile links">
           {content.links.map((link) => (
-            <a key={link.label} href={link.href}>{link.label}</a>
+            <SocialIcon key={link.label} link={link} />
           ))}
         </div>
       </div>

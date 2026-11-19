@@ -23,7 +23,6 @@ export const content: PortfolioContent = {
   links: [
     { label: 'GitHub', href: 'https://github.com/BHAARGAV07' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/bhaargav-kc-82456b28b' },
-    { label: 'LeetCode', href: 'https://leetcode.com/u/Bhaargav07/' },
     { label: 'Email', href: 'mailto:bhaargavkc@gmail.com' },
   ],
   projects: [
