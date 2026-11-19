@@ -3,6 +3,7 @@ import type { ExternalLink } from '../data/types';
 const iconSources: Record<string, string> = {
   GitHub: 'https://img.icons8.com/ios-filled/50/ffffff/github.png',
   LinkedIn: 'https://img.icons8.com/ios-filled/50/ffffff/linkedin.png',
+  LeetCode: 'https://img.icons8.com/ios-filled/50/ffffff/leetcode.png',
   Email: 'https://img.icons8.com/ios-filled/50/ffffff/email.png',
 };
 

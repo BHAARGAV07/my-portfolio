@@ -26,7 +26,7 @@ export function Contact({ profile, links }: { profile: Profile; links: ExternalL
       <div className="contact__content">
         <a className="contact__email" href={`mailto:${profile.email}`}>{profile.email}</a>
         <div className="contact__links" aria-label="Contact links">
-          {links.map((link) => (
+          {links.filter((link) => link.label !== 'LeetCode').map((link) => (
             <SocialIcon key={link.label} link={link} />
           ))}
         </div>
