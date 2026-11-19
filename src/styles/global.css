@@ -469,10 +469,6 @@ img {
   object-fit: contain;
 }
 
-.social-icon__leetcode {
-  filter: brightness(0) invert(1);
-}
-
 .social-icon:hover {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 1px rgba(62, 230, 196, 0.3), 0 3px 12px rgba(62, 230, 196, 0.25);
