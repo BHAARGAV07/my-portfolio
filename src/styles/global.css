@@ -910,6 +910,32 @@ img {
   margin-block: 0;
 }
 
+.timeline__content--full {
+  grid-column: 1 / -1;
+}
+
+.timeline__proofs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: var(--space-4) 0 0;
+  font-family: var(--font-meta);
+  font-size: var(--text-sm);
+}
+
+.subsection-heading {
+  margin-block: var(--space-12) var(--space-5);
+}
+
+.subsection-heading .meta {
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+}
+
+.subsection-heading h3 {
+  margin: 0;
+}
+
 .about__content {
   display: grid;
   grid-template-columns: 2fr 1fr;

@@ -47,6 +47,29 @@ export interface ExperienceItem {
   organization: string;
   date: string;
   description: string;
+  proofPath?: string;
+  proofLabel?: string;
+  externalUrl?: string;
+}
+
+export interface AchievementItem {
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  proofPath?: string;
+  proofLabel?: string;
+  externalUrl?: string;
+}
+
+export interface VolunteeringItem {
+  title: string;
+  organization: string;
+  date: string;
+  description: string;
+  proofPath?: string;
+  proofLabel?: string;
+  externalUrl?: string;
 }
 
 export interface AboutContent {
@@ -66,6 +89,8 @@ export interface PortfolioContent {
   links: ExternalLink[];
   projects: Project[];
   experience: ExperienceItem[];
+  achievements: AchievementItem[];
+  volunteering: VolunteeringItem[];
   about: AboutContent;
   skills: SkillGroups;
 }

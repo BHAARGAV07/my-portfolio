@@ -22,7 +22,7 @@ function App() {
         <About about={content.about} profile={content.profile} />
         <Projects projects={content.projects} />
         <TerminalPanel />
-        <ExperienceProof items={content.experience} />
+        <ExperienceProof experience={content.experience} achievements={content.achievements} volunteering={content.volunteering} />
         <Skills skills={content.skills} />
         <Contact profile={content.profile} links={content.links} />
       </main>
